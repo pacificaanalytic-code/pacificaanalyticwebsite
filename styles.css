@@ -1,0 +1,59 @@
+:root {
+  color-scheme: only light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(127, 209, 174, 0.35), transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(255, 127, 80, 0.22), transparent 40%),
+    linear-gradient(135deg, #f6fbfc 0%, #f3f7ff 48%, #fffaf4 100%);
+}
+
+.mesh {
+  background-image:
+    linear-gradient(to right, rgba(14, 27, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 27, 42, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 82%);
+  -webkit-mask-image: radial-gradient(circle at center, black 38%, transparent 82%);
+}
+
+.float-up {
+  animation: floatUp 9s ease-in-out infinite;
+}
+
+.float-down {
+  animation: floatDown 11s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: reveal 0.9s ease forwards;
+}
+
+.reveal.delay-1 { animation-delay: 0.1s; }
+.reveal.delay-2 { animation-delay: 0.2s; }
+.reveal.delay-3 { animation-delay: 0.3s; }
+.reveal.delay-4 { animation-delay: 0.4s; }
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(14px); }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
